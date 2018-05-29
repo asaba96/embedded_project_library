@@ -7,15 +7,14 @@
 ///////////////////////////////////////
 
 // includes
-#include "stm32f4xx_hal.h"
-#include "stm32f4xx_hal_conf.h"
-#include "animation.h"
-#include "LED_SCREEN.h"
-#include "SCREEN.h"
-#include "SCREEN_fonts.h"
-#include "LED.h"
-#include "button.h"
-#include "encoder.h"
+#include <stm32f4xx_hal.h>
+#include <animation.h>
+#include <LED_SCREEN.h>
+#include <SCREEN.h>
+#include <SCREEN_fonts.h>
+#include <LED.h>
+#include <button.h>
+#include <encoder.h>
 
 // GLOBAL MACRO DEFINES
 // change these to enable functionality

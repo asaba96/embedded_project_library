@@ -16,7 +16,7 @@
  * | along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * |----------------------------------------------------------------------
  */
-#include "SCREEN_fonts.h"
+#include <SCREEN_fonts.h>
 
 const unsigned short int SCREEN_Font7x10 [] = {
 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,  // sp

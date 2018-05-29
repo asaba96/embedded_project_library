@@ -5,7 +5,7 @@
 //
 ///////////////////////////////////////
 
-#include "stm32f429_Discovery_conf.h"
+#include <stm32f429_Discovery_conf.h>
 
 // screen size: 240x320
 

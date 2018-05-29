@@ -1,13 +1,13 @@
 ///////////////////////////////////////
 //
 // Top level c file for animating 
-// dislay with a bar graph pattern
+// display with a bar graph pattern
 // that lights up sequential bars with 
 // changing speed
 //
 ///////////////////////////////////////
 
-#include "stm32f429_Discovery_conf.h"
+#include <stm32f429_Discovery_conf.h>
 
 // define which test to run
 // #define TEST1
@@ -32,18 +32,20 @@ void test2() {
 	int pattern=1;
 	int disp_green = 0;
 	for(;;) {
-		LED_DISP_Green(disp_green);
+		changeLedState(disp_green);
 		disp_green = 1 - disp_green;
-		animation_DisplayPattern(pattern);
+		animationDisplayPattern(pattern);
 		pattern=pattern << 1;
 		if (pattern == 0x400)
 			pattern=1;
-		animation_WaitN(t);
+		animationWaitN(t);
 	}
 }
 #endif 
 
 // test interrupts so don't do anything
+// clicking user button will result in
+// faster animations
 #ifdef TEST3
 void test3() {
 	for(;;) {
@@ -57,9 +59,12 @@ void init() {
 	initButton();
 	encoderInit();
 	greenLedInit();
-	#ifdef USE_LED_INTERRUPT
+#ifdef USE_LED_INTERRUPT
 	ledTimerInit();
-	#endif
+#endif
+#ifdef USE_BUTTON_INTERRUPT
+	animationTimerInit();
+#endif
 }
 
 int main() {

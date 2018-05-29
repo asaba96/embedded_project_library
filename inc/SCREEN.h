@@ -1,8 +1,8 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
-#include "SCREEN_fonts.h"
-// version 4 du 15 février 2018
+#include <SCREEN_fonts.h>
+// version 4 du 15 fï¿½vrier 2018
 
 // screen configuration
 
@@ -42,10 +42,10 @@ void SCREEN_Init(void);
 void SCREEN_Rotate(SCREEN_Orientation_t);
 void SCREEN_SetLayer1(void);
 void SCREEN_SetLayer2(void);
-void SCREEN_Fill(unsigned int);
-void SCREEN_putc(unsigned short int, unsigned short int, char , SCREEN_FontDef_t *, unsigned int, unsigned int);		
-void SCREEN_Puts(unsigned short int, unsigned short int, char *, SCREEN_FontDef_t *, unsigned int, unsigned int);
-void SCREEN_DrawPixel(unsigned short int, unsigned short int, unsigned int);
+void SCREEN_Fill(uint32_t);
+void SCREEN_putc(uint16_t, uint16_t, char, SCREEN_FontDef_t *, uint32_t, uint32_t);
+void SCREEN_Puts(uint16_t, uint16_t, char *, SCREEN_FontDef_t *, uint32_t, uint32_t);
+void SCREEN_DrawPixel(uint16_t, uint16_t, uint32_t);
 void SCREEN_Delay(volatile unsigned int);
 void SCREEN_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint32_t color);
 void SCREEN_DrawRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint32_t color);

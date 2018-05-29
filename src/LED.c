@@ -10,22 +10,22 @@
 //
 ///////////////////////////////////////
 
-#include "stm32f429_Discovery_conf.h"
+#include <stm32f429_Discovery_conf.h>
 
 TIM_HandleTypeDef myTimer;
 
 int disp_green = 1;
 
 // project required in line 
-// arm to eable LED 
+// arm to enable LED
 // TODO fix this to use HAL Library call
-__asm void ledInit() {
-	LDR R0,=0x40023830
+void ledInit() {
+	/*LDR R0,=0x40023830
 	MOV R1, #0x40
 	LDR R1, [R0]
 	ORR R1, R1, #0x40
 	STR R1, [R0]
-	bx LR
+	bx LR*/
 }
 
 // TODO fix this to use HAL library call

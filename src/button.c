@@ -15,7 +15,7 @@
 //
 ///////////////////////////////////////
 
-#include "stm32f429_Discovery_conf.h"
+#include <stm32f429_Discovery_conf.h>
 
 void initButton() {
 	__HAL_RCC_GPIOA_CLK_ENABLE();

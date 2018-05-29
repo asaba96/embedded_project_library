@@ -8,7 +8,7 @@
 //
 ///////////////////////////////////////
 
-#include "stm32f429_Discovery_conf.h"
+#include <stm32f429_Discovery_conf.h>
 
 #define IDLE 0
 #define TURN_LEFT 1

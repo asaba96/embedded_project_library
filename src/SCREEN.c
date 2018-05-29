@@ -1,14 +1,13 @@
-#include "stm32f4xx_hal_conf.h"
-#include "stm32f429_Discovery_conf.h"
-// version 4 du 15 février 2018
+#include <stm32f429_Discovery_conf.h>
+// version 4 du 15 fï¿½vrier 2018
 
 // global variable for SCREEN
 uint16_t SCREEN_x;
 uint16_t SCREEN_y;
 SCREEN_Config_t SCREEN_Configs;
 
-// à faire: setColor(col)
-// à faire: setPos(x,y) setFont() setForeground setBackground
+// ï¿½ faire: setColor(col)
+// ï¿½ faire: setPos(x,y) setFont() setForeground setBackground
 void SysTick_Handler(){
 	HAL_IncTick();
 }
@@ -439,11 +438,11 @@ uint8_t SCREEN_SDRAM_Init(void) {
 	/* (7.81 us x Freq) - 20 = (7.81 * 90MHz) - 20 = 683 */
 	/* Set the device refresh counter */
 	//FMC_SetRefreshCount(680);
-	// dans FMC_SDRTR count de bit 1 à 13
-	// val de 0 à 8191 
+	// dans FMC_SDRTR count de bit 1 ï¿½ 13
+	// val de 0 ï¿½ 8191 
 	//HAL_SDRAM_SetAutoRefreshNumber(&hsdram,);
 	//ne convient pas car Device->SDCMR |= (AutoRefreshNumber << 5); 
-	//on veut hsdram.Instance->SDRTR à écrire
+	//on veut hsdram.Instance->SDRTR ï¿½ ï¿½crire
 	HAL_SDRAM_ProgramRefreshRate(&hsdram,680);	
 	/* Wait until the SDRAM controller is ready */ 
 	/* Check if everything goes right */
@@ -646,9 +645,9 @@ void SCREEN_LTDC_Init(void) {
 	/* PLLLCDCLK = PLLSAI_VCO Output/PLLSAI_R = 192/4 = 96 Mhz */
 	// ca devrait etre 48 MHz car 192/4=48
 	/* LTDC clock frequency = PLLLCDCLK / RCC_PLLSAIDivR = 96/4 = 24 Mhz */
-	// il y a un diviseur après appelé DIV 
+	// il y a un diviseur aprï¿½s appelï¿½ DIV 
 	// est ce que DIV=2 => frequ obtenue = 48/2=24MHz?
-	// ou alors c'est que l'init est en fait à 12 MHz et non à 24 comme annoncé
+	// ou alors c'est que l'init est en fait ï¿½ 12 MHz et non ï¿½ 24 comme annoncï¿½
 	
 	//RCC_PLLSAIConfig(192, 7, 4);
 	//RCC_LTDCCLKDivConfig(RCC_PLLSAIDivR_Div4);
@@ -706,7 +705,7 @@ void SCREEN_LTDC_Init(void) {
   /* Configure total height */
   LTDC_HandleInitStructure.Init.TotalHeigh = 327;
 	
-	// initialisation à ajouter?
+	// initialisation ï¿½ ajouter?
 	//initLayers en particulier?
 		/* 	Windowing configuration */
 	/* 	Horizontal start = horizontal synchronization + Horizontal back porch = 43 
